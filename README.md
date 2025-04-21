@@ -25,6 +25,9 @@ Cyber threats are everywhere — phishing sites, drive-by downloads, and malicio
 ## 📦 Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript (Chrome Extension with Manifest v3)
+- - **Backend (Planned)**: Python (Flask), Node.js, Firebase/MongoDB  -> (comming soon)
+- **Threat Intelligence**: Google Safe Browsing, VirusTotal API    -> (comming soon)
+- **Machine Learning**: Scikit-Learn / TensorFlow (for threat classification)   ->  (comming soon)
 
 ---
 
