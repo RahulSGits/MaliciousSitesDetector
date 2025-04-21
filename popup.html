@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cyber Security Shield</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🛡️ Cyber Security Shield</h1>
+    <p class="subtitle">Detect malicious websites in real time</p>
+
+    <input type="text" id="urlInput" placeholder="Enter website URL..." />
+    <div class="btn-group">
+      <button onclick="scanURL()">🔍 Scan Now</button>
+      <button onclick="rescan()">🔄 Rescan</button>
+      <button onclick="viewReport()">📊 View Report</button>
+      <button onclick="toggleProtection()">🛡️ Real-Time Protection</button>
+      <button onclick="showHelp()">❓ Help</button>
+    </div>
+
+    <div id="status" class="status-box hidden">
+      <p class="status-message">Scanning...</p>
+      <div class="loader"></div>
+    </div>
+    
+    <body>
+        <div class="container">
+          <h1>CyberShield AI Scanner</h1>
+          <p>Protecting you from online threats in real time.</p>
+          <!-- Buttons and inputs here -->
+        </div>
+      </body>
+      
+
+    <div id="result" class="result-box hidden">
+      <h3 id="riskLevel">Risk: Unknown</h3>
+      <p id="details">Waiting for scan...</p>
+      <button onclick="reportSite()">🚩 Report This Site</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
