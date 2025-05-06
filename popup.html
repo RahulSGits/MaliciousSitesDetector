@@ -20,6 +20,33 @@
       <button onclick="showHelp()">❓ Help</button>
     </div>
 
+    <div class="mt-4 flex items-center gap-4">
+      <span id="toggleStatus" class="text-sm font-semibold text-gray-300">Status: Disabled</span>
+      
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" id="realTimeToggle" class="sr-only peer">
+        <div class="w-11 h-6 bg-gray-600 rounded-full peer peer-checked:bg-green-500 transition-colors duration-300"></div>
+        <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-full"></div>
+      </label>
+    </div>
+    
+    <script>
+      const toggle = document.getElementById('realTimeToggle');
+      const status = document.getElementById('toggleStatus');
+    
+      toggle.addEventListener('change', () => {
+        if (toggle.checked) {
+          status.textContent = 'Status: Enabled';
+          status.classList.remove('text-gray-300');
+          status.classList.add('text-green-400');
+        } else {
+          status.textContent = 'Status: Disabled';
+          status.classList.remove('text-green-400');
+          status.classList.add('text-gray-300');
+        }
+      });
+    </script>
+
     <div id="status" class="status-box hidden">
       <p class="status-message">Scanning...</p>
       <div class="loader"></div>
