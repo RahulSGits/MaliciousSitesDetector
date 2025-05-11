@@ -13,39 +13,29 @@
 
     <input type="text" id="urlInput" placeholder="Enter website URL..." />
     <div class="btn-group">
-      <button onclick="scanURL()">🔍 Scan Now</button>
-      <button onclick="rescan()">🔄 Rescan</button>
-      <button onclick="viewReport()">📊 View Report</button>
-      <button onclick="toggleProtection()">🛡️ Real-Time Protection</button>
-      <button onclick="showHelp()">❓ Help</button>
+      <button id="scanBtn">🔍 Scan Now</button>
+<button id="rescanBtn">🔄 Rescan</button>
+<button id="viewReportBtn">📊 View Report</button>
+<button id="toggleProtectionBtn">🛡️ Real-Time Protection</button>
+<button id="helpBtn">❓ Help</button>
+
     </div>
 
-    <div class="mt-4 flex items-center gap-4">
-      <span id="toggleStatus" class="text-sm font-semibold text-gray-300">Status: Disabled</span>
-      
-      <label class="relative inline-flex items-center cursor-pointer">
-        <input type="checkbox" id="realTimeToggle" class="sr-only peer">
-        <div class="w-11 h-6 bg-gray-600 rounded-full peer peer-checked:bg-green-500 transition-colors duration-300"></div>
-        <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-full"></div>
-      </label>
-    </div>
-    
-    <script>
-      const toggle = document.getElementById('realTimeToggle');
-      const status = document.getElementById('toggleStatus');
-    
-      toggle.addEventListener('change', () => {
-        if (toggle.checked) {
-          status.textContent = 'Status: Enabled';
-          status.classList.remove('text-gray-300');
-          status.classList.add('text-green-400');
-        } else {
-          status.textContent = 'Status: Disabled';
-          status.classList.remove('text-green-400');
-          status.classList.add('text-gray-300');
-        }
-      });
-    </script>
+
+    <!-- Toggle Switch Container -->
+<div class="mt-4 flex items-center gap-4">
+  <!-- Status Text -->
+  <span id="toggleStatus" class="text-sm font-semibold text-gray-300">
+    Status: Disabled
+  </span>
+
+  <!-- Toggle Switch -->
+  <label class="relative inline-flex items-center cursor-pointer">
+    <input type="checkbox" id="realTimeToggle" class="sr-only peer">
+    <div class="w-11 h-6 bg-gray-600 rounded-full peer peer-checked:bg-green-500 transition-colors duration-300"></div>
+    <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-full"></div>
+  </label>
+</div>
 
     <div id="status" class="status-box hidden">
       <p class="status-message">Scanning...</p>
@@ -64,9 +54,13 @@
     <div id="result" class="result-box hidden">
       <h3 id="riskLevel">Risk: Unknown</h3>
       <p id="details">Waiting for scan...</p>
-      <button onclick="reportSite()">🚩 Report This Site</button>
+      <button id="reportBtn">📩 Report This Site</button>
+
     </div>
   </div>
+
+  
+
 
   <script src="script.js"></script>
 </body>
