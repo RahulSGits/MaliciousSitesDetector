@@ -1,4 +1,4 @@
-# 🛡️ MaliciousSitesDetector - CyberShield AI Extension
+# 🛡️ CyberShield AI Extension - MaliciousSitesDetector
 
 > A smart browser extension for real-time detection of malicious websites using AI-powered threat intelligence.
 
