@@ -60,11 +60,14 @@ def analyze_url():
     if model:
         length = len(url)
         dots = url.count(".")
-        prediction = model.predict([[length, dots]])[0]
+        has_suspicious = int(any(word in url.lower() for word in ["free", "login", "verify", "update", "secure", "click"]))
+        prediction = model.predict([[length, dots, has_suspicious]])[0]
+
         print("🧠 ML model prediction:", prediction)
 
         if prediction == 1:
             return jsonify({'risk': 'Suspicious ⚠️', 'reason': 'AI model flagged this URL as suspicious'})
+
 
     # Final fallback
     return jsonify({'risk': 'Safe ✅', 'reason': 'No threats detected'})
