@@ -9,7 +9,8 @@ model = joblib.load("url_model.pkl")
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = "AIzaSyAJVFNDOVwWfB1t7I4eVfQXh9SZ4AnZ13I"
+API_KEY = ""
+#AIzaSyCiYSxGnirc3ejfCQDCM02hO45k9PA0x28
 
 # ✅ Load your trained ML model (make sure this file exists)
 model_path = "url_model.pkl"
