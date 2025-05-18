@@ -1,66 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Cyber Security Shield</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
+  <style styles.css ></style>
 </head>
 <body>
   <div class="container">
-    <h1>🛡️ Cyber Security Shield</h1>
+    <img src="icon.png" class="logo" alt="CyberShield Logo">
+    <h1>Cyber <span class="highlight">Security Shield</span></h1>
     <p class="subtitle">Detect malicious websites in real time</p>
 
-    <input type="text" id="urlInput" placeholder="Enter website URL..." />
-    <div class="btn-group">
-      <button id="scanBtn">🔍 Scan Now</button>
-<button id="rescanBtn">🔄 Rescan</button>
-<button id="viewReportBtn">📊 View Report</button>
-<button id="toggleProtectionBtn">🛡️ Real-Time Protection</button>
-<button id="helpBtn">❓ Help</button>
+    <input type="text" id="urlInput" placeholder="Enter website URL...">
 
+    <div class="button-grid">
+      <button id="scanBtn">🔍 Scan Now</button>
+      <button id="rescanBtn">🔄 Rescan</button>
+      <button id="viewReportBtn">📊 View Report</button>
+      <button id="toggleProtectionBtn" onclick="toggleRealTimeProtection()">🛡️ Real-Time Protection</button>
     </div>
 
+    <button class="full-button" id="helpBtn">❓ Help</button>
+    <button id="reportBtn" class="full-button">🚨 Report This Site</button>
 
-    <!-- Toggle Switch Container -->
-<div class="mt-4 flex items-center gap-4">
-  <!-- Status Text -->
-  <span id="toggleStatus" class="text-sm font-semibold text-gray-300">
-    Status: Disabled
-  </span>
 
-  <!-- Toggle Switch -->
-  <label class="relative inline-flex items-center cursor-pointer">
-    <input type="checkbox" id="realTimeToggle" class="sr-only peer">
-    <div class="w-11 h-6 bg-gray-600 rounded-full peer peer-checked:bg-green-500 transition-colors duration-300"></div>
-    <div class="absolute left-0.5 top-0.5 w-5 h-5 bg-white rounded-full transition-transform duration-300 peer-checked:translate-x-full"></div>
-  </label>
+<div id="status" class="hidden">
+  <p class="status-message">🔍 Scanning...</p>
 </div>
 
-    <div id="status" class="status-box hidden">
-      <p class="status-message">Scanning...</p>
-      <div class="loader"></div>
-    </div>
-    
-    <body>
-        <div class="container">
-          <h1>CyberShield AI Scanner</h1>
-          <p>Protecting you from online threats in real time.</p>
-          <!-- Buttons and inputs here -->
-        </div>
-      </body>
-      
 
-    <div id="result" class="result-box hidden">
-      <h3 id="riskLevel">Risk: Unknown</h3>
-      <p id="details">Waiting for scan...</p>
-      <button id="reportBtn">📩 Report This Site</button>
+<div id="result" class="hidden">
+  <p id="riskLevel">Risk:</p>
+  <p id="details">Details:</p>
+</div>
 
+
+    <div class="status-toggle">
+      <span id="toggleStatus">Status: Disabled</span>
+      <label class="switch">
+        <input type="checkbox" id="realTimeToggle" onchange="toggleRealTimeProtection()">
+        <span class="slider"></span>
+      </label>
     </div>
   </div>
-
-  
-
 
   <script src="script.js"></script>
 </body>
