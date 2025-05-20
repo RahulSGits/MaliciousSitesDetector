@@ -29,7 +29,7 @@ def analyze_url():
         return jsonify({'risk': 'Suspicious ⚠️', 'reason': 'Invalid or empty URL'})
 
     # Step 1: Google Safe Browsing API
-    endpoint = f"https://safebrowsing.googleapis.com/v4/threatMatches:find?key=AIzaSyCiYSxGnirc3ejfCQDCM02hO45k9PA0x28"
+    endpoint = f"https://safebrowsing.googleapis.com/v4/threatMatches:find?key={Api_key}"
     payload = {
         "client": {"clientId": "yourcompanyname", "clientVersion": "1.5.2"},
         "threatInfo": {
