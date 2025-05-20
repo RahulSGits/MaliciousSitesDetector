@@ -1,4 +1,4 @@
-// Scan URL by calling Flask backend
+// scan url by calling Flask backend
 function scanURL() {
   const url = document.getElementById("urlInput").value;
   const statusBox = document.getElementById("status");
@@ -37,18 +37,18 @@ function scanURL() {
 }
 
 function rescan() {
-  // Clear URL input
+  // clear URL input
   document.getElementById("urlInput").value = "";
 
-  // Hide the result box and status box
+  // hide the result box and status box
   document.getElementById("result").classList.add("hidden");
   document.getElementById("status").classList.add("hidden");
 
-  // Reset risk level and details text to default
+  // reset risk level and details text to default
   document.getElementById("riskLevel").textContent = "Risk: -";
   document.getElementById("details").textContent = "Waiting for analysis...";
 
-  // Reset real-time toggle switch and status text
+  // reset real-time toggle switch and status text
   const toggle = document.getElementById("realTimeToggle");
   const statusText = document.getElementById("toggleStatus");
   toggle.checked = false;
@@ -58,7 +58,7 @@ function rescan() {
 }
 
 
-// Send report to backend and alert user
+// send report to backend and alert user
 function reportSite() {
   const url = document.getElementById("urlInput").value;
   const risk = document.getElementById("riskLevel").textContent.replace("Risk: ", "");
@@ -76,12 +76,12 @@ function reportSite() {
     .catch(() => alert("❌ Failed to report site."));
 }
 
-// Placeholder alert for viewing reports
+// placeholder alert for viewing reports
 function viewReport() {
   alert("📊 Feature Coming Soon: Detailed threat reports with charts and history!");
 }
 
-// Placeholder alert for toggling protection
+// placeholder alert for toggling protection
 function toggleProtection() {
   alert("🛡️ Real-Time Protection toggled.");
 }
@@ -99,7 +99,7 @@ function toggleRealTimeProtection() {
   statusText.textContent = toggle.checked ? "Status: Enabled" : "Status: Disabled";
 }
 
-// Event listeners for buttons and toggle switch
+// event listeners for buttons and toggle switch
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("scanBtn").addEventListener("click", scanURL);
   document.getElementById("rescanBtn").addEventListener("click", rescan);
@@ -117,53 +117,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-
-
-function scanURL() {
-  const url = document.getElementById("urlInput").value;
-  const statusBox = document.getElementById("status");
-  const resultBox = document.getElementById("result");
-  const statusMsg = document.querySelector(".status-message");
-
-  if (!url) {
-    alert("Please enter a URL to scan.");
-    return;
-  }
-
-  // Show scanning animation and hide previous results instantly
-  statusBox.classList.remove("hidden");
-  resultBox.classList.add("hidden");
-  statusMsg.textContent = "🔍 Scanning...";
-
-  // Immediately call backend without any artificial timeout
-  fetch("http://127.0.0.1:5000/analyze-url", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ url: url }),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      // After backend responds, update results
-      document.getElementById("riskLevel").textContent = `Risk: ${data.risk}`;
-      document.getElementById("details").textContent = data.reason;
-
-      // Hide scanning, show results
-      statusBox.classList.add("hidden");
-      resultBox.classList.remove("hidden");
-    })
-    .catch((err) => {
-      console.error("Error:", err);
-      document.getElementById("riskLevel").textContent = "Error ❌";
-      document.getElementById("details").textContent = "Could not connect to server.";
-
-      statusBox.classList.add("hidden");
-      resultBox.classList.remove("hidden");
-    });
-}
-
-
-
 fetch("http://127.0.0.1:5000/analyze-url", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
@@ -171,7 +124,7 @@ fetch("http://127.0.0.1:5000/analyze-url", {
 })
 .then((res) => res.json())
 .then((data) => {
-  // Show result on UI
+  // show result on UI
   document.getElementById("riskLevel").textContent = `Risk: ${data.risk}`;
   document.getElementById("details").textContent = data.reason;
 
@@ -182,7 +135,7 @@ fetch("http://127.0.0.1:5000/analyze-url", {
     body: JSON.stringify({ url: url, risk: data.risk }),
   });
 
-  // Hide scanning animation, show results
+  // side scanning animation, show results
   statusBox.classList.add("hidden");
   resultBox.classList.remove("hidden");
 })
