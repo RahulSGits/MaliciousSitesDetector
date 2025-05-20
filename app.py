@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import requests
 from flask_cors import CORS
 from datetime import datetime
-import joblib  # For loading the ML model
+import joblib
 import os
 model = joblib.load("url_model.pkl")
 
@@ -10,9 +10,8 @@ app = Flask(__name__)
 CORS(app)
 
 API_KEY = ""
-#AIzaSyCiYSxGnirc3ejfCQDCM02hO45k9PA0x28
+# api-> AIzaSyCiYSxGnirc3ejfCQDCM02hO45k9PA0x28
 
-# ✅ Load your trained ML model (make sure this file exists)
 model_path = "url_model.pkl"
 model = joblib.load(model_path) if os.path.exists(model_path) else None
 
