@@ -60,3 +60,58 @@
 2025-05-15T12:00:00	vimeo.com	Safe ✅
 2025-05-15T12:00:00	docs.google.com	Safe ✅
 
+2025-05-18T08:10:39.919890	wx1wss121w2	Suspicious ⚠️
+
+
+2025-05-20T14:22:47.551664	wvevewv	Suspicious ⚠️
+2025-05-20T14:22:47.554949	wvevewv	Suspicious ⚠️
+2025-05-20T14:22:50.293936	wvwv	Suspicious ⚠️
+2025-05-20T14:22:53.381796	wfwvvr	Suspicious ⚠️
+2025-05-20T14:22:57.179046	wwgvwrrv	Suspicious ⚠️
+2025-05-20T14:23:00.365138	wwv	Suspicious ⚠️
+2025-05-20T14:29:15.952943	efevr	Suspicious ⚠️
+2025-05-20T14:29:18.299875	gerg	Suspicious ⚠️
+2025-05-20T14:36:56.426777	weffwef	Suspicious ⚠️
+2025-05-20T14:36:58.640979	wefwfv	Suspicious ⚠️
+2025-05-20T14:37:19.063640	vfdv	Suspicious ⚠️
+2025-05-20T14:37:50.122030	rgege	Suspicious ⚠️
+2025-05-21T04:58:00	https://docs-trzeerstart.github.io/	Malicious ❌
+2025-05-21T04:58:00	http://docs-trzeerstart.github.io	Malicious ❌
+2025-05-21T04:51:00	https://feqs-bridge-trezor-cdn.netlify.app/	Malicious ❌
+2025-05-21T04:51:00	http://feqs-bridge-trezor-cdn.netlify.app	Malicious ❌
+2025-05-21T04:49:00	https://bonailspatra.gr/services/	Malicious ❌
+2025-05-21T04:48:00	https://multsystemdelivery.com/tuny/	Malicious ❌
+2025-05-21T04:46:00	https://oijyty.mapadeloscomedores.com/WIUrObasdad/t37CS6R70z3t.htmsdkj...	Malicious ❌
+2025-05-21T04:45:00	https://fobemwr.jimhearn.com/gdn.htm?aW5mb0Bwb3dlcnNtaWxlZGVudGFsY2Vud...	Malicious ❌
+2025-05-21T04:45:00	http://allegrolokalnie.pl-96284.cfd	Malicious ❌
+2025-05-21T04:41:00	https://support-hardware-docs.bravesites.com/en-us...	Malicious ❌
+2025-05-21T04:22:00	https://g2wpartners.com	Malicious ❌
+2025-05-21T04:21:00	http://interglobaltransfer.com	Malicious ❌
+2025-05-21T04:11:00	https://d198kuuj6lu6yf.cloudfront.net/	Malicious ❌
+2025-05-21T04:11:00	http://d198kuuj6lu6yf.cloudfront.net	Malicious ❌
+2025-05-21T04:06:00	https://web.ton-keper.com/	Malicious ❌
+2025-05-21T04:06:00	http://web.ton-keper.com	Malicious ❌
+2025-05-21T03:52:00	https://www.vivasorte-premios.com/	Malicious ❌
+2025-05-21T03:51:00	https://u8l0kvdov4.icu/wJwuCWk/	Malicious ❌
+2025-05-21T03:50:00	https://9o2r7ybcsc.icu/wJwuCWk/	Malicious ❌
+2025-05-21T03:49:00	https://3fkn86ekyo.icu/wJwuCWk/	Malicious ❌
+
+2025-05-20T14:37:53.608671	rg	Suspicious ⚠️
+2025-05-20T14:38:20.616823	ehe	Suspicious ⚠️
+2025-05-20T14:38:23.840731	qddqc	Suspicious ⚠️
+2025-05-20T14:39:13.733763	vwevw	Suspicious ⚠️
+2025-05-20T14:40:17.582046	wvw	Suspicious ⚠️
+2025-05-20T14:42:55.871297	veve	Suspicious ⚠️
+2025-05-20T14:42:58.882589	bverb	Suspicious ⚠️
+2025-05-21T04:17:11.025519	https://google.com	Safe ✅
+2025-05-21T04:17:13.808323	https://google.com	Safe ✅
+2025-05-21T07:38:22.093148	https://gr.suppllemennts-promocionais.com/ 	Suspicious ⚠️
+2025-05-21T08:19:52.962826	http://web.ton-keper.com	Suspicious ⚠️
+2025-05-26T05:07:31.418744	ssdv	Suspicious ⚠️
+2025-05-26T05:08:42.185870	naturallogo12434!@2	Suspicious ⚠️
+2025-05-26T05:09:00.502383	http://web.ton-keper.com	Suspicious ⚠️
+2025-06-16T15:15:41.543864	www.https.html.com	Safe ✅
+2025-06-16T15:15:56.810629	wenflknkfbkwvWVWVW>W>WVWVWMV	Suspicious ⚠️
+2025-06-17T13:18:14.847333	http://2rkjbrb2krb.2r2,nb2k.2r2f	Malicious
+2025-06-17T13:40:25.938095	https://www.vivasorte-premios.com/	Malicious
+2025-06-17T13:57:03.825207	http://web.ton-keper.comkrbfebkv	Malicious
