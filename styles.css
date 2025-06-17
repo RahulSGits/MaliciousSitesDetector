@@ -1,163 +1,416 @@
-body, html {
-  height: 100%;
+/* Same CSS as before */
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  color: #f8fafc;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1a2a6c, #2a4d69, #4b86b4);
+  color: #fff;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .container {
+  max-width: 800px;
+  width: 100%;
+  background: rgba(15, 30, 60, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header {
+  background: rgba(10, 20, 40, 0.9);
+  padding: 25px 30px;
   text-align: center;
-  background-color: #1e293b;
-  padding: 25px;
-  border-radius: 16px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+header h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
 
+header p {
+  font-size: 18px;
+  opacity: 0.8;
+}
 
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background: linear-gradient(135deg, #2b3c55, #293149);
+.shield-icon {
+  font-size: 60px;
+  margin-bottom: 15px;
+  color: #4facfe;
+  text-shadow: 0 0 15px rgba(79, 172, 254, 0.5);
+}
+
+.main-content {
+  padding: 30px;
+}
+
+.url-input {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Segoe UI', sans-serif;
+  margin-bottom: 25px;
+  position: relative;
 }
 
-  body {
-  font-family: 'Segoe UI', sans-serif;
-      background-color: #1e293b;
-      color: #f1f5f9;
-      width: 360px;
-      min-height: 600px;
-      padding: 20px;
-      box-sizing: border-box;
-      margin: 0;
-    }
+.url-input input {
+  flex: 1;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s;
+}
 
-    .container {
-      text-align: center;
-      padding: 10px;
-      border-radius: 10px;
-      border: 2px solid #334155;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
+.url-input input:focus {
+  border-color: #4facfe;
+  box-shadow: 0 0 15px rgba(79, 172, 254, 0.3);
+}
 
-    .logo {
-      width: 50px;
-      margin-bottom: 10px;
-    }
+.url-input input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
 
-    h1 {
-      font-size: 22px;
-      margin: 5px 0;
-    }
+.scan-btn {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: #fff;
+  border: none;
+  padding: 0 30px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+}
 
-    .highlight {
-      color: #3b82f6;
-    }
+.scan-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(79, 172, 254, 0.5);
+}
 
-    .subtitle {
-      font-size: 13px;
-      color: #cbd5e1;
-      margin-bottom: 20px;
-    }
+.scan-btn:active {
+  transform: translateY(0);
+}
 
-    input[type="text"] {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #64748b;
-      margin-bottom: 18px;
-      font-size: 14px;
-      box-sizing: border-box;
-    }
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
 
-    .button-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 16px;
-    }
+.control-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin: 0 5px;
+}
 
-    .button-grid button,
-    .full-button {
-      padding: 12px 10px;
-      border: 1px solid #475569;
-      border-radius: 8px;
-      background-color: #3b82f6;
-      color: white;
-      font-weight: bold;
-      font-size: 14px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+.control-btn i {
+  margin-right: 8px;
+  font-size: 18px;
+}
 
-    .button-grid button:hover,
-    .full-button:hover {
-      background-color: #2563eb;
-    }
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
 
-    .status-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #334155;
-      border-radius: 9999px;
-      padding: 8px 14px;
-      font-size: 14px;
-      margin-top: 20px;
-      border: 1px solid #475569;
-    }
+.status-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 42px;
-      height: 22px;
-    }
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-    .switch input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
+.status-title {
+  font-size: 22px;
+  font-weight: 600;
+}
 
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #ccc;
-      transition: .4s;
-      border-radius: 34px;
-    }
+.status-value {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+}
 
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 16px;
-      width: 16px;
-      left: 3px;
-      bottom: 3px;
-      background-color: white;
-      transition: .4s;
-      border-radius: 50%;
-    }
+.scanning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 0;
+}
 
-    input:checked + .slider {
-      background-color: #22c55e;
-    }
+.scanning-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #4facfe;
+}
 
-    input:checked + .slider:before {
-      transform: translateX(18px);
-    }
+.scanning-text {
+  font-size: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.risk-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.risk-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.risk-value {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.risk-meter {
+  width: 100%;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.risk-level {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, #4facfe, #ff9a9e, #ff6b6b);
+  border-radius: 10px;
+  transition: width 1s ease;
+}
+
+.risk-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 25px;
+}
+
+.details-container {
+  width: 100%;
+}
+
+.details-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.details-content {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.details-content div {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.details-content div span:first-child {
+  font-weight: 600;
+  min-width: 150px;
+  opacity: 0.8;
+}
+
+.protection-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  margin-top: 25px;
+}
+
+.toggle-label {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #555;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background: #fff;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+
+input:checked+.slider:before {
+  transform: translateX(30px);
+}
+
+.chart-container {
+  height: 200px;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.safe {
+  color: #4CAF50;
+}
+
+.low-risk {
+  color: #FFC107;
+}
+
+.medium-risk {
+  color: #FF9800;
+}
+
+.high-risk {
+  color: #F44336;
+}
+
+.report-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.report-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+  }
+
+  .control-btn {
+    margin: 5px 0;
+  }
+
+  .url-input {
+    flex-direction: column;
+  }
+
+  .scan-btn {
+    margin: 15px 0 0 0;
+    padding: 15px;
+  }
+}
