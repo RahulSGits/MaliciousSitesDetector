@@ -1,37 +1,34 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 import requests
 from flask_cors import CORS
 from datetime import datetime
 import joblib
 import os
-model = joblib.load("url_model.pkl")
 
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = ""
-# api-> AIzaSyCiYSxGnirc3ejfCQDCM02hO45k9PA0x28
+API_KEY = "AIzaSyCiYSxGnirc3ejfCQDCM02hO45k9PA0x28"
 
 model_path = "url_model.pkl"
 model = joblib.load(model_path) if os.path.exists(model_path) else None
 
 @app.route('/')
-def home():
-    return "✅ Flask server is running. Use /analyze-url via POST."
-
+def index():
+    return send_file('index.html')
 
 @app.route('/analyze-url', methods=['POST'])
 def analyze_url():
     url = request.json.get('url')
-    print(f"\n📡 Received URL to scan: {url}")
+    print(f"\nReceived URL to scan: {url}")
 
     if not url or len(url) < 5:
         return jsonify({'risk': 'Suspicious ⚠️', 'reason': 'Invalid or empty URL'})
 
-    # Step 1: Google Safe Browsing API
-    endpoint = f"https://safebrowsing.googleapis.com/v4/threatMatches:find?key={Api_key}"
+    # Google Safe Browsing API
+    endpoint = "https://safebrowsing.googleapis.com/v4/threatMatches:find?key=" + API_KEY
     payload = {
-        "client": {"clientId": "yourcompanyname", "clientVersion": "1.5.2"},
+        "client": {"clientId": "Cyber-Shield", "clientVersion": "1.5.2"},
         "threatInfo": {
             "threatTypes": ["MALWARE", "SOCIAL_ENGINEERING", "POTENTIALLY_HARMFUL_APPLICATION"],
             "platformTypes": ["ANY_PLATFORM"],
@@ -42,12 +39,12 @@ def analyze_url():
     headers = {"Content-Type": "application/json"}
     response = requests.post(endpoint, headers=headers, json=payload)
     result = response.json()
-    print("🛡️ Google Safe Browsing result:", result)
+    print("Google Safe Browsing result:", result)
 
     if result.get("matches"):
         return jsonify({'risk': 'Malicious ❌', 'reason': 'Listed in Safe Browsing database'})
 
-    # Step 2: Use basic AI heuristics
+    # Basic AI heuristics
     suspicious_keywords = ['free', 'login', 'verify', 'update', 'secure', 'click']
     if (
         len(url) < 8 or len(url) > 100 or
@@ -56,22 +53,20 @@ def analyze_url():
     ):
         return jsonify({'risk': 'Suspicious ⚠️', 'reason': 'Heuristics flagged this URL as potentially risky'})
 
-    # Step 3: Predict using trained ML model
+    # Predict using trained ML model
     if model:
         length = len(url)
         dots = url.count(".")
-        has_suspicious = int(any(word in url.lower() for word in ["free", "login", "verify", "update", "secure", "click"]))
+        has_suspicious = int(any(word in url.lower() for word in suspicious_keywords))
         prediction = model.predict([[length, dots, has_suspicious]])[0]
 
-        print("🧠 ML model prediction:", prediction)
+        print("ML model prediction:", prediction)
 
         if prediction == 1:
             return jsonify({'risk': 'Suspicious ⚠️', 'reason': 'AI model flagged this URL as suspicious'})
 
-
     # Final fallback
     return jsonify({'risk': 'Safe ✅', 'reason': 'No threats detected'})
-
 
 @app.route('/report-site', methods=['POST'])
 def report_site():
@@ -85,6 +80,5 @@ def report_site():
 
     return jsonify({'status': 'logged'})
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=5000)
